@@ -1,6 +1,5 @@
-package junit;
+package Classwork;
 
-import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -29,7 +28,8 @@ public class TestOrTest {
         $("#submit").click();
 
 
-        $("#submit").click();
+        $("#output").shouldHave(text("Pavel"), text("pavel@inbox.ru"),
+                text("Some address 1"), text("Other adress 2"));
 
     }
 }
