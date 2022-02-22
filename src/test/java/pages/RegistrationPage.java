@@ -36,7 +36,16 @@ public class RegistrationPage {
        }
 
        public RegistrationPage setuserEmail(String userEmail) {
-           lastNameInput.setValue(userEmail);
+           userEmailInput.setValue(userEmail);
+
+
+           return this;
+    }
+       public RegistrationPage setBirthDate(String day, String month, String year) {
+               $("#dateOfBirthInput").click();
+               $(".react-datepicker__month-select").selectOption("November");
+               $(".react-datepicker__year-select").selectOption("1996");
+               $("[aria-label$='November 19th, 1996']").click();
 
            return this;
     }

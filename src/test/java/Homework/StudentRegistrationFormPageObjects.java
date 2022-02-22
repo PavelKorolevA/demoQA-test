@@ -33,10 +33,7 @@ public class StudentRegistrationFormPageObjects {
 
         $("#userNumber").setValue("1234567894");
 
-        $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOptionByValue("10");
-        $(".react-datepicker__year-select").selectOptionByValue("1996");
-        $(".react-datepicker__day--007").click();
+        registrationPage.setBirthDate("30", "November", "1996");
 
         $("#subjectsInput").setValue("Biology").pressEnter();
         $("#subjectsInput").setValue("Chemistry").pressEnter();
