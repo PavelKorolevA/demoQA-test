@@ -14,6 +14,21 @@ import static com.codeborne.selenide.Selenide.open;
 public class StudentRegistrationFormPageObjects {
 
     RegistrationPage registrationPage = new RegistrationPage();
+    private String
+            firstname = "Pavel",
+            lastName = "Korolev",
+            email = "pavelkorolev@corp.com",
+            gender = "genterWrapper",
+            mobile = "1234567894",
+            day = "19",
+            dayCheck = "19",
+            month = "November",
+            year = "1996",
+            subjects = "Biology",
+            hobbies = "hobbiesWrapper",
+            address = "Samara",
+            state = "Haryana",
+            city = "Panipat";
 
     @BeforeAll
     static void beforeAll() {
@@ -24,45 +39,35 @@ public class StudentRegistrationFormPageObjects {
 
     @Test
     void successFillTest() {
-        registrationPage.openPage()
-                .setFirstName("Pavel")
-                .setLastName("Korolev")
-                .setuserEmail("pavelkorolev@corp.com");
-
-        $("#genterWrapper").$(byText("Male")).click();
-
-        $("#userNumber").setValue("1234567894");
-
-        registrationPage.setBirthDate("30", "November", "1996");
-
-        $("#subjectsInput").setValue("Biology").pressEnter();
-        $("#subjectsInput").setValue("Chemistry").pressEnter();
-
-        $("#hobbiesWrapper").$(byText("Reading")).click();
-        $("#uploadPicture").uploadFromClasspath("1.jpg");
-
-        $("#currentAddress").setValue("Samara");
-
-        $("#react-select-3-input").setValue("Haryana").pressEnter();
-        $("#react-select-4-input").setValue("Panipat").pressEnter();
-        $("#submit").click();
+        registrationPage
+                .openPage()
+                .setfirstName(firstname)
+                .setlastName(lastName)
+                .setemail(email)
+                .setgender(gender)
+                .setmobile(mobile)
+                .Calendar.setDate(day, month, year);
+        registrationPage
+                .setsubjects(subjects)
+                .sethobbies(hobbies)
+                .setaddress(address)
+                .setstate(state)
+                .setcity(city)
+                .setsubmit("submit");
 
 
-        $("#example-modal-sizes-title-lg").shouldHave((textCaseSensitive("Thanks for submitting the form")));
-        $(".table-responsive").shouldHave(
-                textCaseSensitive("Student Name"),    textCaseSensitive("Pavel Korolev"),
-                textCaseSensitive("Student Email"),   textCaseSensitive("pavelkorolev@corp.com"),
-                textCaseSensitive("Gender"),          textCaseSensitive("Male"),
-                textCaseSensitive("Mobile"),          textCaseSensitive("1234567894"),
-                textCaseSensitive("Date of Birth"),   textCaseSensitive("07 November,1996"),
-                textCaseSensitive("Subjects"),        textCaseSensitive("Biology, Chemistry"),
-                textCaseSensitive("Hobbies"),         textCaseSensitive("Reading"),
-                textCaseSensitive("Picture"),         textCaseSensitive("1.jpg"),
-                textCaseSensitive("Address"),         textCaseSensitive("Samara"),
-                textCaseSensitive("State and City"),  textCaseSensitive("Haryana Panipat")
-        );
-
-        $("#closeLargeModal").click();
+        //чек
+        registrationPage
+                .checkCheckForm("Student Name", firstname + " " + lastName)
+                .checkCheckForm("Student Email", email)
+                .checkCheckForm("Gender", gender)
+                .checkCheckForm("Mobile", mobile)
+                .checkCheckForm("Date of Birth", dayCheck + " " + month + "," + year)
+                .checkCheckForm("Mobile", mobile)
+                .checkCheckForm("Subjects", subjects)
+                .checkCheckForm("Hobbies", String.join(", ", hobbies))
+                .checkCheckForm("Address", address)
+                .checkCheckForm("State and City", state + " " + city);
+    }
 
     }
-}
