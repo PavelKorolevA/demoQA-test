@@ -42,39 +42,39 @@ public class RegistrationPage {
            return this;
        }
 
-       public RegistrationPage setfirstName(String firstName) {
+       public RegistrationPage setFirstName(String firstName) {
            firstNameInput.setValue(firstName);
 
            return this;
        }
-       public RegistrationPage setlastName(String lastName) {
+       public RegistrationPage setLastName(String lastName) {
            lastNameInput.setValue(lastName);
 
            return this;
        }
 
-       public RegistrationPage setemail(String email) {
+       public RegistrationPage setEmail(String email) {
            emailInput.setValue(email);
 
 
            return this;
        }
 
-       public RegistrationPage setgender(String gender) {
+       public RegistrationPage setGender(String gender) {
            $("#genterWrapper").$(byText("Male")).click();
 
 
            return this;
        }
 
-       public RegistrationPage setmobile(String mobile) {
+       public RegistrationPage setMobile(String mobile) {
            mobileInput.setValue(mobile);
 
 
            return this;
        }
 
-       public RegistrationPage setsubjects(String subjects) {
+       public RegistrationPage setSubjects(String subjects) {
            subjectsInput.setValue(subjects)
                    .pressEnter();
 
@@ -89,28 +89,28 @@ public class RegistrationPage {
            return this;
        }
 
-       public RegistrationPage sethobbies(String hobbies) {
+       public RegistrationPage setHobbies(String hobbies) {
            $("#hobbiesWrapper").$(byText("Reading")).click();
 
 
         return this;
        }
 
-       public RegistrationPage setpicture(String picture) {
+       public RegistrationPage setPicture(String picture) {
            $("#uploadPicture").uploadFromClasspath("1.jpg");
 
 
         return this;
        }
 
-       public RegistrationPage setaddress(String address) {
+       public RegistrationPage setAddress(String address) {
            addressInput.setValue(address);
 
 
         return this;
        }
 
-        public RegistrationPage setstate(String state) {
+        public RegistrationPage setState(String state) {
             $("#stateCity-label").scrollTo();
             stateInput.setValue(state)
                 .pressEnter();
@@ -118,7 +118,7 @@ public class RegistrationPage {
 
         return this;
        }
-        public RegistrationPage setcity(String city) {
+        public RegistrationPage setCity(String city) {
             cityInput.setValue(city)
                 .pressEnter();
 
@@ -126,7 +126,7 @@ public class RegistrationPage {
         return this;
        }
 
-    public RegistrationPage setsubmit(String submit) {
+    public RegistrationPage setSubmit(String submit) {
         $("#submit").scrollTo();
         $("#submit").click();
 

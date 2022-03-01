@@ -41,19 +41,19 @@ public class StudentRegistrationFormPageObjects {
     void successFillTest() {
         registrationPage
                 .openPage()
-                .setfirstName(firstname)
-                .setlastName(lastName)
-                .setemail(email)
-                .setgender(gender)
-                .setmobile(mobile)
+                .setFirstName(firstname)
+                .setLastName(lastName)
+                .setEmail(email)
+                .setGender(gender)
+                .setMobile(mobile)
                 .Calendar.setDate(day, month, year);
         registrationPage
-                .setsubjects(subjects)
-                .sethobbies(hobbies)
-                .setaddress(address)
-                .setstate(state)
-                .setcity(city)
-                .setsubmit("submit");
+                .setSubjects(subjects)
+                .setHobbies(hobbies)
+                .setAddress(address)
+                .setState(state)
+                .setCity(city)
+                .setSubmit("submit");
 
 
         //чек
