@@ -37,9 +37,10 @@ public class StudentRegistrationForm {
         $("#userNumber").setValue("1234567894");
 
         $("#dateOfBirthInput").click();
+        $("#hobbies-checkbox-1").scrollTo();
         $(".react-datepicker__month-select").selectOptionByValue("10");
         $(".react-datepicker__year-select").selectOptionByValue("1996");
-        $(".react-datepicker__day--007").click();
+        $(".react-datepicker__day--019").click();
 
         $("#subjectsInput").setValue("Biology").pressEnter();
         $("#subjectsInput").setValue("Chemistry").pressEnter();

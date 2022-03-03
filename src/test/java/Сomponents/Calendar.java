@@ -9,12 +9,11 @@ import static com.codeborne.selenide.Selenide.$;
 public class Calendar {
 
     public void setDate(String day, String month, String year) {
-        $("#currentAddress-label").scrollTo();
         $("#dateOfBirthInput").click();
-        $(".react-datepicker__month-select").selectOption("November");
-        $(".react-datepicker__year-select").selectOption("1996");
-        $("[aria-label$='" + month + " " + day + "th, " + year + "']").click();
-
+        $("#hobbies-checkbox-1").scrollTo();
+        $(".react-datepicker__month-select").selectOptionByValue("10");
+        $(".react-datepicker__year-select").selectOptionByValue("1996");
+        $(".react-datepicker__day--019").click();
     }
 
 }

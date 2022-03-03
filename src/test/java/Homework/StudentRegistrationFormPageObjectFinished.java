@@ -1,47 +1,36 @@
 package Homework;
 
-import com.codeborne.selenide.Configuration;
-import org.junit.jupiter.api.BeforeAll;
+import Testbase.TestBase;
 import org.junit.jupiter.api.Test;
+import pages.RegistrationPageFinished;
+import Сomponents.Calendar;
 
 
-
-import static com.codeborne.selenide.Condition.text;
-
+import static com.codeborne.selenide.Condition.textCaseSensitive;
 import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.open;
 
 
-public class StudentRegistrationFormPageObjectFinished {
+public class StudentRegistrationFormPageObjectFinished extends TestBase {
 
-    @BeforeAll
-    static void beforeAll() {
-        Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = "1920x1080";
-    }
+    RegistrationPageFinished registrationPageFinished = new RegistrationPageFinished();
 
+    private String
+            firstName = "Pavel",
+            lastName = "Korolev",
+            email = "pavelkorolev@corp.com",
+            gender = "genterWrapper",
+            mobile = "1234567894";
 
 
     @Test
     void successFillTest() {
-        open("/automation-practice-form");
-        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
-
-        $("#firstName").setValue("Pavel");
-        $("#lastName").setValue("Korolev");
-        $("#userEmail").setValue("pavelkorolev@corp.com");
-
-        $("#gender-radio-1").parent().click();
-
-        $("#userNumber").setValue("1234567894");
-
-        $("#dateOfBirthInput").click();
-
-        $("#hobbies-checkbox-1").scrollTo();
-
-        $(".react-datepicker__month-select").selectOptionByValue("10");
-        $(".react-datepicker__year-select").selectOptionByValue("1996");
-        $(".react-datepicker__day--019").click();
+       registrationPageFinished
+               .openPage()
+               .setFirstName(firstName)
+               .setLastName(lastName)
+               .setEmail(email)
+               .setGender(gender)
+               .setMobile(mobile);
 
         $("#subjectsInput").setValue("Biology").pressEnter();
 
@@ -54,10 +43,26 @@ public class StudentRegistrationFormPageObjectFinished {
         $("#react-select-3-input").setValue("Haryana").pressEnter();
         $("#react-select-4-input").setValue("Panipat").pressEnter();
 
-        $("#react-select-3-input").click();
-        $("#submit").click();
+        $("#react-select-3-input").pressEnter();
+      //  $("#submit").click();
 
 
+
+        $("#example-modal-sizes-title-lg").shouldHave((textCaseSensitive("Thanks for submitting the form")));
+        $(".table-responsive").shouldHave(
+                textCaseSensitive("Student Name"),    textCaseSensitive("Pavel Korolev"),
+                textCaseSensitive("Student Email"),   textCaseSensitive("pavelkorolev@corp.com"),
+                textCaseSensitive("Gender"),          textCaseSensitive("Male"),
+                textCaseSensitive("Mobile"),          textCaseSensitive("1234567894"),
+                textCaseSensitive("Date of Birth"),   textCaseSensitive("19 November,1996"),
+                textCaseSensitive("Subjects"),        textCaseSensitive("Biology"),
+                textCaseSensitive("Hobbies"),         textCaseSensitive("Sports"),
+                textCaseSensitive("Picture"),         textCaseSensitive("1.jpg"),
+                textCaseSensitive("Address"),         textCaseSensitive("Samara"),
+                textCaseSensitive("State and City"),  textCaseSensitive("Haryana Panipat")
+        );
+
+        $("#closeLargeModal").parent().click();
 
 
 

@@ -17,11 +17,11 @@ public class RegistrationPage {
 
     // locators
     private SelenideElement
-            headerTitle = $(".main-header"),
+            headerTitle = $(".practice-form-wrapper"),
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
-            genderInput = $("#genterWrapper"),
+            genderInput = $("#gender-radio-1"),
             mobileInput = $("#userNumber"),
             BirthDate = $("#dateOfBirthInput"),
             subjectsInput = $("#subjectsInput"),
