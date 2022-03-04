@@ -19,9 +19,14 @@ public class RegistrationPageFinished {
             lastNameInput = $("#lastName"),
             emailInput = $("#userEmail"),
             genderInput = $("#gender-radio-1"),
-            mobileInput = $("#userNumber");
-
-
+            mobileInput = $("#userNumber"),
+            // дата
+            subjectsInput = $("#subjectsInput"),
+            hobbiesInput = $("#hobbiesWrapper"),
+            pictureInput = $("#uploadPicture"),
+            addressInput = $("#currentAddress"),
+            stateInput = $("#react-select-3-input"),
+            cityInput = $("#react-select-4-input");
 
 
 
@@ -64,5 +69,64 @@ public class RegistrationPageFinished {
 
         return this;
     }
+
+
+
+
+    // Date
+
+
+
+
+
+
+
+
+
+    public RegistrationPageFinished setSubjects(String subjects) {
+        subjectsInput.setValue(subjects)
+                .pressEnter();
+
+
+        return this;
+    }
+
+    public RegistrationPageFinished setHobbies(String hobbies) {
+        $("#hobbiesWrapper").$(byText("Reading")).click();
+
+
+        return this;
+    }
+
+    public RegistrationPageFinished setPicture(String picture) {
+        $("#uploadPicture").uploadFromClasspath("1.jpg");
+
+
+        return this;
+    }
+
+    public RegistrationPageFinished setAddress(String address) {
+        addressInput.setValue(address);
+
+
+        return this;
+    }
+
+    public RegistrationPageFinished setState(String state) {
+        stateInput.setValue(state)
+                .pressEnter();
+
+
+        return this;
+    }
+    public RegistrationPageFinished setCity(String city) {
+        cityInput.setValue(city)
+                .pressEnter();
+
+
+        return this;
+    }
+
+
 
 }

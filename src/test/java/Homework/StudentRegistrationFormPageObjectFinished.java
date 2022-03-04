@@ -7,6 +7,7 @@ import Сomponents.Calendar;
 
 
 import static com.codeborne.selenide.Condition.textCaseSensitive;
+import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 
 
@@ -19,8 +20,13 @@ public class StudentRegistrationFormPageObjectFinished extends TestBase {
             lastName = "Korolev",
             email = "pavelkorolev@corp.com",
             gender = "genterWrapper",
-            mobile = "1234567894";
-
+            mobile = "1234567894",
+    // дата
+            subjects = "Biology",
+            hobbies = "hobbiesWrapper",
+            address = "Samara",
+            state = "Haryana",
+            city = "Panipat";
 
     @Test
     void successFillTest() {
@@ -30,20 +36,17 @@ public class StudentRegistrationFormPageObjectFinished extends TestBase {
                .setLastName(lastName)
                .setEmail(email)
                .setGender(gender)
-               .setMobile(mobile);
+               .setMobile(mobile)
+               //дата
+               .setSubjects(subjects)
+               .setHobbies(hobbies)
+               .setAddress(address)
+               .setState(state)
+               .setCity(city);
 
-        $("#subjectsInput").setValue("Biology").pressEnter();
 
-        $("#hobbies-checkbox-1").parent().click();
 
-        $("#uploadPicture").uploadFromClasspath("1.jpg");
-
-       $("#currentAddress").setValue("Samara");
-
-        $("#react-select-3-input").setValue("Haryana").pressEnter();
-        $("#react-select-4-input").setValue("Panipat").pressEnter();
-
-        $("#react-select-3-input").pressEnter();
+        $("#react-select-3-input").pressEnter(); //как это записать?
       //  $("#submit").click();
 
 
