@@ -19,7 +19,7 @@ public class StudentRegistrationFormPageObjectFinished extends TestBase {
             gender = "Male",
             mobile = "1234567894",
             day = "19",
-            month = "10",
+            month = "November",
             monthTitle = "November",
             year = "1996",
             subjects = "Biology",
@@ -53,7 +53,7 @@ public class StudentRegistrationFormPageObjectFinished extends TestBase {
                 .checkForm("Student Email", email)
                 .checkForm("Gender", gender)
                 .checkForm("Mobile", mobile)
-                .checkForm("Date of Birth", day + " " + monthTitle + " " + year)
+                .checkForm("Date of Birth", "Date of Birth" + " " +day + " " + monthTitle + "," + year)
                 .checkForm("Subjects", subjects)
                 .checkForm("Hobbies", hobby)
                 .checkForm("Picture", picture)
