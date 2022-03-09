@@ -1,4 +1,4 @@
-package Classwork;
+package classwork;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;

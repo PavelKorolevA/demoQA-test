@@ -1,4 +1,4 @@
-package Testbase;
+package testbase;
 
 import com.codeborne.selenide.Configuration;
 import org.junit.jupiter.api.BeforeAll;

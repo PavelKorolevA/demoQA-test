@@ -1,4 +1,4 @@
-package Classwork;
+package classwork;
 
 import org.junit.jupiter.api.*;
 
