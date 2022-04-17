@@ -5,8 +5,6 @@ import org.junit.jupiter.api.Test;
 import pages.RegistrationPageFinished;
 
 
-import static com.codeborne.selenide.Selenide.$;
-
 
 public class StudentRegistrationFormPageObjectFinished extends TestBase {
 
