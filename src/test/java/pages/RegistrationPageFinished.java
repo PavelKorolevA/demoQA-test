@@ -38,7 +38,7 @@ public class RegistrationPageFinished {
         headerTitle.shouldHave(text("Student Registration Form"));
 
         return this;
-    };
+    }
 
     public RegistrationPageFinished setFirstName(String firstName) {
         firstNameInput.setValue(firstName);
