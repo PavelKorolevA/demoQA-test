@@ -11,6 +11,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import static config.ConfigHelper.getWebRemoteDriverPassword;
 import static config.ConfigHelper.getWebRemoteDriverUser;
 
+
 public class TestBase {
 
     @BeforeAll
