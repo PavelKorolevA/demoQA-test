@@ -1,8 +1,6 @@
 plugins {
     id 'java-library'
     id "io.qameta.allure" version "2.9.6"
-    id 'org.jetbrains.kotlin.jvm' version '1.5.10'
-    id 'application'
 }
 
 repositories {
