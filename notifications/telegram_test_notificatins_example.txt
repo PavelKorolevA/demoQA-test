@@ -5,5 +5,5 @@ java \
 
 // Local
 java \
-"-DconfigFile=notifications/telegram_config.json"\
+"-Dconfig.file=notifications/telegram_config.json" \
 -jar notifications/allure-notifications-4.1.jar
